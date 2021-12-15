@@ -126,45 +126,6 @@ ax.set_ylabel("Price($K)")
 
 """The number of rooms and price seem to have a linear trend, so let us try to predict price using number of rooms first.
 
-### Question 1a. Derivation of a simple linear model for a single feature [10 pts]
-Suppose we have $N$ pairs of training samples $(x_1,y_1),\ldots, (x_N,y_N)$, where $x_i \in \mathbb{R}$ and $y_i \in \mathbb{R}$. 
-
-We want to perform a linear fit for this 1D data as 
-$$y = wx+b,$$
-where $w\in \mathbb{R}$ and $b\in \mathbb{R}$. 
-
-In the class, we looked at the derivation of optimal value of $w$ when $b=0$. The squared loss function can be written as  $$L(w) = \sum_{i=1}^N(w x_i -y_i)^2,$$ and the optimal value of $w*$ that minimizes $L(w)$ can be written as $$w^* = (\sum_{i=1}^N x_i^2)^{-1}(\sum_{i=1}^N x_i y_i)$$. 
-
-
-Now let us include $b$ in our model. Show that the optimal values of $w^*,b^*$ that minimize the loss function 
-$$L(w,b) = \sum_{i=1}^N(wx_i + b -y_i)^2$$ 
-can be written as 
-$$w^* = (\sum_i (x_i - \bar{x})^2)^{-1}(\sum_i (x_i-\bar{x})(y_i-\bar{y}))$$
-and $$b^* = \bar{y} - w^*\bar{x},$$
-where $\bar{x} = \frac{1}{N}\sum_i x_i, \bar{y} = \frac{1}{N}\sum_i y_i$ are mean values of $x_i,y_i$, respectively.
-
-**TODO: Your derivation goes here.**
-
-The partial differential $w$ for the partial derivative of loss function:
-
-$$\frac{\partial L(w,b)}{\partial w} = 2\sum_{i=1}^N x_i(w'x_i' + b -y_i)$$
-
-With respect to $w$ and $b$ equal to zero, the partial derivative can be rewritten as:
-
-$$\frac{\partial L(w,b)}{\partial w} = 2\sum_{i=1}^N x_i(w'x_i' -y_i)$$
-
-The partial differential $b$ for the partial derivative of loss function:
-
-$$\frac{\partial L(w,b)}{\partial b} = 2\sum_{i=1}^N (w'x_i' + b -y_i)$$
-
-
-With respect to $w$ and $b$ equal to zero, the partial derivative can be rewritten as:
-
-$$\frac{\partial L(w,b)}{\partial b} = 2\sum_{i=1}^N (w'x_i' -y_i)$$
-
-
-*   *Hint. Set the partial derivative of $L(w,b)$ with respect to $w$ and $b$ to zero.*
-*   Type using latex commands and explain your steps
 
 ### Question 1b. Fitting a linear model using a single feature [10 pts] 
 
